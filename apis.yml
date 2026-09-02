@@ -1,7 +1,15 @@
 aid: vantis-vascular
 name: Vantis Vascular
-description: 'Vantis Vascular is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Vantis Vascular, Inc. is a San Jose, California medical device company founded
+  by interventional cardiologists to build performance-driven tools for complex vascular
+  interventions. Its flagship CrossFAST Integrated Microcatheter Guide Extension System — a
+  dual-monorail advanced delivery system cleared by the FDA under 510(k) and in commercial use
+  since 2025 — is designed to improve deliverability and control in complex, calcified coronary
+  and peripheral anatomy, and a CrossSHOCK intravascular lithotripsy (IVL) system is in
+  development. The company has raised roughly $30M across seed and Series B rounds. It builds and
+  sells physical single-use interventional devices to hospitals and interventionalists; it is not
+  a software vendor and publishes no public API, SDK, developer portal or machine-readable
+  contract of any kind.'
 url: https://raw.githubusercontent.com/api-evangelist/vantis-vascular/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +20,13 @@ created: '2026-09-02'
 modified: '2026-09-02'
 tags:
 - Company
+- Medical Devices
+- Health Care
+- Cardiovascular
+- Interventional Cardiology
+- Vascular
+- Catheters
+- Medical Technology
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +34,38 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/vantis-vascular-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://vantisvascular.com/
+- type: PrivacyPolicy
+  url: https://vantisvascular.com/privacy-policy/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/vantis-vascular
+x-enrichment:
+  date: '2026-09-02'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Vantis Vascular manufactures single-use interventional catheters — the FDA 510(k)-cleared
+    CrossFAST guide extension system and the in-development CrossSHOCK IVL system — and its only
+    web property is a stock WordPress marketing site (the default "Hello world!" post is still
+    published) whose every path, including a negative-control path that cannot exist, answers
+    HTTP 202 behind a SiteGround captcha challenge; no api/developer/docs/portal/app/mcp
+    subdomain resolves and no GitHub organization exists.
+  evidence:
+  - url: https://vantisvascular.com/
+    status: 202
+  - url: https://vantisvascular.com/.well-known/api-catalog
+    status: 202
+  - url: https://vantisvascular.com/.well-known/vantis-vascular-negative-control-7f3ab91c.json
+    status: 202
+  - url: https://vantisvascular.com/openapi.json
+    status: 202
+  - url: https://api.github.com/orgs/vantisvascular
+    status: 404
+  checked: '2026-09-02'

@@ -1,0 +1,73 @@
+generated: '2026-09-02'
+method: probed
+source: https://vantisvascular.com/
+note: >-
+  NO HIT. Every /.well-known/ path on vantisvascular.com answers HTTP 202 with a 169-229 byte
+  SiteGround bot-challenge shell (response header `sg-captcha: challenge`, body is a
+  meta-refresh to /.well-known/sgcaptcha/). Nothing was fetched and nothing was saved, so no
+  document row carries a `file:` and NO WellKnown / SecurityTxt pointer is emitted. The
+  negative-control path below cannot exist and also returned 202 with the same shell, which
+  confirms the host is a catch-all under challenge rather than a server of these documents.
+  A 202 challenge is not evidence the company does or does not serve a .well-known surface —
+  it is evidence our crawler was turned away. See x-coverage in apis.yml.
+hit_count: 0
+path_echo_control: failed
+soft_404_control:
+  path: /.well-known/vantis-vascular-negative-control-7f3ab91c.json
+  status: 202
+  bytes: 229
+  body_kind: html-bot-challenge
+hosts:
+- host: https://vantisvascular.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 202
+    note: bot-challenge shell (195 bytes html), not a document
+  - path: /.well-known/openid-configuration
+    status: 202
+    note: bot-challenge shell (203 bytes html), not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 202
+    note: bot-challenge shell (209 bytes html), not a document
+  - path: /.well-known/oauth-protected-resource
+    status: 202
+    note: bot-challenge shell (207 bytes html), not a document
+  - path: /.well-known/api-catalog
+    status: 202
+    note: bot-challenge shell (194 bytes html), not a document
+  - path: /.well-known/ai-plugin.json
+    status: 202
+    note: bot-challenge shell (197 bytes html), not a document
+  - path: /.well-known/ucp.json
+    status: 202
+    note: bot-challenge shell (191 bytes html), not a document
+  - path: /.well-known/acp.json
+    status: 202
+    note: bot-challenge shell (191 bytes html), not a document
+  - path: /.well-known/aauth-resource.json
+    status: 202
+    note: bot-challenge shell (202 bytes html), not a document
+  - path: /.well-known/agent-card.json
+    status: 202
+    note: bot-challenge shell (198 bytes html), not a document; rejected as an A2A card
+  - path: /.well-known/agent.json
+    status: 202
+    note: bot-challenge shell (193 bytes html), not a document; rejected as an A2A card
+x-evidence:
+  fetched: '2026-09-02'
+  user_agents_tried:
+  - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/126
+  - Googlebot/2.1
+  - curl/8.4.0
+  challenge_vendor: SiteGround (sg-captcha)
+  hosts_resolved:
+    vantisvascular.com: 34.174.45.64
+  subdomains_probed_nxdomain:
+  - api.vantisvascular.com
+  - developer.vantisvascular.com
+  - developers.vantisvascular.com
+  - docs.vantisvascular.com
+  - portal.vantisvascular.com
+  - app.vantisvascular.com
+  - mcp.vantisvascular.com
+  - status.vantisvascular.com
